@@ -1,5 +1,5 @@
 # Blog-pyton - Generador de blogs con IA
-# Creado por Luz - vivigalindo72-ui
+# Creado por Luz 
 # Version original - Tema libre
 import random
 
