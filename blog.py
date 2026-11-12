@@ -1,32 +1,15 @@
-from flask import Flask, render_template_string
+# Blog-pyton - Generador de parrafos con IA
+# Creado por Luz 
 
-app = Flask(_name_)
+def generar_parrafo(tema):
+    base = f"The meaning of {tema} is a question that has been asked by people throughout history. There are a number of different interpretations of what this means."
+    return base
 
-posts = [
-    {"titulo": "Bienvenidos a mi blog", "autor": "Vivi", "texto": "Este es mi primer post hecho en Python y Flask."},
-    {"titulo": "Lo que aprendí", "autor": "Vivi", "texto": "Crear un repo en GitHub desde la compu es más fácil que en el cel."}
-]
-
-plantilla = """
-<!DOCTYPE html>
-<html>
-<head><title>Blog-pyton</title></head>
-<body style="font-family:Arial; max-width:600px; margin:auto;">
-    <h1>Blog-pyton de Vivi</h1>
-    <hr>
-    {% for p in posts %}
-        <h2>{{ p.titulo }}</h2>
-        <small>Por {{ p.autor }}</small>
-        <p>{{ p.texto }}</p>
-        <hr>
-    {% endfor %}
-</body>
-</html>
-"""
-
-@app.route("/")
-def inicio():
-    return render_template_string(plantilla, posts=posts)
-
-if _name_ == "_main_":
-    app.run(debug=True)
+while True:
+    r = input("Write a paragraph? Y for yes, anything else for no. ")
+    if r.lower() != "y":
+        break
+    tema = input("What should this paragraph talk about? ")
+    print("")
+    print(generar_parrafo(tema))
+    print("")
